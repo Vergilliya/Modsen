@@ -7,17 +7,18 @@ const Card = ({book}) => {
             {
                 book.map((item => {
                     let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
-                    return (
-                        <>
-                            <div className="card">
-                                <img src={thumbnail} alt="" />
-                                <div className="bottom">
-                                    <h3 className="title"></h3>
+                    if (thumbnail != undefined) {
+                        return (
+                            <>
+                                <div className="card">
+                                    <img src={thumbnail} alt="" />
+                                    <div className="bottom">
+                                        <h3 className="title">{item.volumeInfo.title}</h3>
+                                    </div>
                                 </div>
-                            </div>
-                        </>
-                    )
-                    
+                            </>
+                        )
+                    }
                 }))
             }
         </>
