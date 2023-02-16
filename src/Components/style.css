@@ -30,6 +30,11 @@
     align-items: center;
     justify-content: center;
 }
+.found{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .search input{
     outline: 0;
     border: 0;
@@ -45,6 +50,29 @@
     height: 35px;
     padding: 0 0.5rem;
 }
+
+
+.categories{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.categories h2{
+    margin-bottom: 5px;
+    color: aliceblue;
+}
+.sort{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sort h2{
+    margin-bottom: 5px;
+    color: aliceblue;
+}
+
+
+
 .container{
     width: 65%;
     margin: 0 auto;
@@ -54,8 +82,13 @@
     grid-gap: 20px;
     box-sizing: border-box;
 }
+.more-books{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .card{
-    background-color: darkgray;
+    background-color: rgb(210, 208, 208);
     padding: 0.5rem;
     margin-bottom: 10px;
     transition: .5s;
@@ -66,15 +99,60 @@
     transform: scale(0.9);
     background-color: rgba(255,255,255,0.8);
 }
-.card img{
-
-}
 .card .bottom{
     display: flex;
     flex-direction: column;
 }
-
 .card .bottom .title{
     font-size: 14px;
-    margin-bottom: 12px;
+}
+
+
+
+.overlay{
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.overlay-inner{
+    background: white;
+    width:  700px;
+    height: 550px;
+    padding: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+.overlay-inner .close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    background-color: transparent;
+}
+.overlay-inner .inner-box{
+    margin-top: 30px;
+    display: flex;
+}
+.overlay-inner .inner-box img{
+    margin-left: 10px;
+    width: 150px;
+    height: 200px;   
+}
+.overlay-inner .inner-box .info{
+    margin-left: 10px;
+}
+.overlay-inner .inner-box .info .description{
+    margin-top: 20px;
 }
