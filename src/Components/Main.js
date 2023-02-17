@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Card from "./Card";
+import Found from "./Found";
 import axios from "axios";
 
 var booksCount = 0;
@@ -10,7 +11,7 @@ const Main = () => {
     const [bookData,setData] = useState([]);
     const searchBook = (event) => {
         if (event.type === 'click' || event.key === 'Enter') {
-            if (lastSearch != search) booksCount = 0;
+            if (lastSearch !== search) booksCount = 0;
             booksCount += 30;
             axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search + '&key=AIzaSyC_3uMN114YXaJQqNw2EgpEhtfc-QT9u88'+`&maxResults=${booksCount}`)
             .then(res => {
@@ -56,20 +57,15 @@ const Main = () => {
             </div>
             <img className="bg-img" src="./images/bg.png"></img>
         </div>
-        <div className="found">
-            <h3>Found {foundResults} results</h3>
-        </div>
+        <Found results={foundResults}/>
         <div className="container">
             {
                 <Card book={bookData}/>
             }
         </div>
         <div className="more-books">
-            {
-                <button onClick={searchBook}>Load more</button>
-            }
+            <button onClick={searchBook}>Load more</button>
         </div>
-        
         </>
     );
 }

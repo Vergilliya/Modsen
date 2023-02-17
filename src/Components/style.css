@@ -51,7 +51,11 @@
     padding: 0 0.5rem;
 }
 
-
+.categories-sort{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .categories{
     display: flex;
     align-items: center;
